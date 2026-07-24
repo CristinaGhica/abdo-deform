@@ -307,8 +307,8 @@ def calculate_desired_expansion(expansions_mm, percentage_diffs, desired_expansi
     elif min_perc <= desired_expansion_perc <= max_perc:
         print(f"Desired percentage is within range ({min_perc:.2f}% - {max_perc:.2f}%)")
 
-        # Interpolate to find the expansion vector (in mm) for the given percentage difference
-        interp_func = interp1d(percentage_diffs, expansions_mm, kind='linear')
-        desired_expansion_mm = interp_func(desired_expansion_perc)
+    # Interpolate to find the expansion vector (in mm) for the given percentage difference
+    interp_func = interp1d(percentage_diffs, expansions_mm, kind='linear')
+    desired_expansion_mm = interp_func(desired_expansion_perc)
 
     return desired_expansion_mm
